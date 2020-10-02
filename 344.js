@@ -11,6 +11,8 @@ var reverseString = function(s) {
     }
 };
 
+//OR
+
 var reverseString = function(s) {
     function recursiveString(left,right) {
         if (left < right) {
