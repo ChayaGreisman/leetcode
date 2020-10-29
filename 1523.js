@@ -13,16 +13,14 @@ var countOdds = function(low, high) {
 var countOdds = function(low, high) {
     let count = 0;
     if(low%2!==0 && high%2!==0){
-        count = count+2
-        count += ((high-low)/2)-1
-    } else if (low%2!==0 || high%2!==0){
         count++
-        count += ((high-low)/2)-1
+        count += ((high-low)/2)
     } else {
-        count = (high-low)/2
-    }
+        count = ((high-low)/2)
+    } 
     return count
 };
+
 
 var countOdds = function(low, high) {
     
