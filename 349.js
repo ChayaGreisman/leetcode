@@ -15,6 +15,20 @@
 // The result can be in any order.
  
 
+var intersection = function(nums1, nums2) {
+    let obj = {};
+    for(let i = 0; i<nums1.length; i++){
+        obj[nums1[i]] = obj[nums1[i]]+1 || 1
+    }
+    let arr = [];
+    for(let i = 0; i<nums2.length; i++){
+        if( nums2[i] in obj && !arr.includes(nums2[i])){
+            arr.push(nums2[i])
+        }
+    }
+    return arr;
+};
+
 
 //Solutions using Set
 // O(n)
@@ -55,21 +69,21 @@ function intersect(nums1, nums2){
             else j++;
         }
         return result;
-    }
-    //HashMap Solution: O(n)
+}
+//HashMap Solution: O(n)
     
-    function intersect(nums1, nums2){
-        let map = new Map();
-        for(let num of nums1){
-            if(!map.has(num))
-                map.set(num, 1);
-        }
-        
-        return nums2.filter(n => {
-            if(map.has(n)){
-                map.delete(n);
-                return true;
-            }
-            else return false;
-        });
+function intersect(nums1, nums2){
+    let map = new Map();
+    for(let num of nums1){
+        if(!map.has(num))
+            map.set(num, 1);
     }
+    
+    return nums2.filter(n => {
+        if(map.has(n)){
+            map.delete(n);
+            return true;
+        }
+        else return false;
+    });
+}
