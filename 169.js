@@ -16,3 +16,29 @@ var majorityElement = function(nums) {
     }
     
 };
+
+
+// alt solutions:
+
+var majorityElement = function(nums) {
+    // sort the array and the middle is the majority
+    nums.sort((a,b) => a - b);
+    return nums[Math.floor(nums.length/2)];
+}; 
+
+
+var majorityElement = function(nums) {
+    
+    // Boyer-Moore Voting Algorithm
+    
+    let count = 0, majority = 0
+    
+    for (num of nums) {
+        if (count == 0) {
+            majority = num
+        }
+        count += num == majority ? 1 : -1
+    }
+    
+    return majority
+};
