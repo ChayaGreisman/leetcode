@@ -44,6 +44,6 @@ var twoSum = function(nums, target) {
         obj[nums[i]] = i;  
     }
     for(let i=0; i<nums.length; i++){
-        if(!!obj[target-nums[i]] && obj[target-nums[i]] != i) return [i, obj[target-nums[i]]];
+        if(obj[target-nums[i]] && obj[target-nums[i]] != i) return [i, obj[target-nums[i]]];
     }
 }
