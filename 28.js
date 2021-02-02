@@ -16,6 +16,7 @@
 // Input: haystack = "", needle = ""
 // Output: 0
 
+//ADJUST - Incorrect
 
 var strStr = function(haystack, needle) {
     if (needle === "") return 0;
