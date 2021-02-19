@@ -1,7 +1,7 @@
-
-
-
 var convert = function(s, numRows) {
+
+    if (numRows === 1) return s;
+
     let newString = "";
     let arr = []
     
@@ -36,11 +36,7 @@ var convert = function(s, numRows) {
             rowIndex++; 
             direction = 'increase'
         }
-
-        
     }
-    
-    
     
     for(let i=0; i<numRows; i++){
         for(let j=0; j<arr[i].length; j++){
@@ -49,9 +45,6 @@ var convert = function(s, numRows) {
             }
         }
     }
-    
-    
-    
     
     return newString
 };
